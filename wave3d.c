@@ -147,7 +147,7 @@ main(int argc, char **argv)
   zero_wavestate3d_cuboid(wvVecCuboid, steps, cuboidNumberX, cuboidNumberY, cuboidNumberZ, first_mpi, last_mpi);
   
   if(rank==0)
-  	boundary_wavestate3d_cuboid(wvVecCuboid, 0.0);
+  	boundary_wavestate3d_cuboid(wvVecCuboid, 0.0, steps);
 
   s = clock();
 //  s_omp = omp_get_wtime();
