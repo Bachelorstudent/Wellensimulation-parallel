@@ -59,10 +59,10 @@ zero_wavestate3d_cuboid(pwavestate3dAllign*** wvCuboid, int steps, int cuboidNum
 
 /* Set interesting boundary values */
 void
-boundary_wavestate3d_allign(pwavestate3dAllign wv, real t);
+boundary_wavestate3d_allign(pwavestate3dAllign wv, real t, int steps);
 
 void
-boundary_wavestate3d_cuboid(pwavestate3dAllign*** wvCuboid, real t);
+boundary_wavestate3d_cuboid(pwavestate3dAllign*** wvCuboid, real t, int steps);
 
 /* Print a cuboid */
 void
