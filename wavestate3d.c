@@ -227,21 +227,29 @@ zero_wavestate3d_cuboid(pwavestate3dAllign*** wvCuboid, int steps, int cuboidNum
    ------------------------------------------------------------ */
 
 void
-boundary_wavestate3d_allign(pwavestate3dAllign wv, real t)
+boundary_wavestate3d_allign(pwavestate3dAllign wv, real t, int steps)
 {
   real *x = wv->x;
 
+  int arrayCntX = wv->nx + steps * 2;
+  int arrayCntXY = wv->ny + steps * 2;
+  arrayCntXY *= arrayCntX;
+
   if(0.0 < t && t < 0.25)
-    x[0] = sin(M_PI * t / 0.125);
+    x[arrayCntXY + arrayCntX + 1] = sin(M_PI * t / 0.125);
 }
 
 void
-boundary_wavestate3d_cuboid(pwavestate3dAllign*** wvCuboid, real t)
+boundary_wavestate3d_cuboid(pwavestate3dAllign*** wvCuboid, real t, int steps)
 {
   real *x = wvCuboid[0][0][0]->x;
 
+  int arrayCntX = wvCuboid[0][0][0]->nx + steps * 2;
+  int arrayCntXY = wvCuboid[0][0][0]->ny + steps * 2;
+  arrayCntXY *= arrayCntX;
+
   if(0.0 < t && t < 0.25)
-    x[0] = sin(M_PI * t / 0.125);
+    x[arrayCntXY + arrayCntX + 1] = sin(M_PI * t / 0.125);
 }
 
 
